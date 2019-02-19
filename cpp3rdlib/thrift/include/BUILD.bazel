@@ -1,0 +1,44 @@
+cc_library(
+  name = "thrift",
+  hdrs = glob(
+    [
+      "thrift/*.h",
+      "thrift/async/**/*.h",
+      "thrift/processor/**/*.h",
+      "thrift/protocol/**/*.h",
+      "thrift/protocol/**/*.tcc",
+      "thrift/server/**/*.h",
+      "thrift/transport/**/*.h",
+      "thrift/concurrency/*.h",
+    ]
+  ),
+  srcs = glob(
+    [
+      "thrift/*.cpp",
+      "thrift/async/**/*.cpp",
+      "thrift/processor/**/*.cpp",
+      "thrift/protocol/**/*.cpp",
+      "thrift/server/**/*.cpp",
+      "thrift/transport/**/*.cpp",
+
+	  "thrift/concurrency/PosixThreadFactory.cpp",
+	  "thrift/concurrency/StdThreadFactory.cpp",
+	  # "thrift/concurrency/BoostMonitor.cpp",
+	  "thrift/concurrency/Mutex.cpp",
+	  # "thrift/concurrency/BoostMutex.cpp",
+	  # "thrift/concurrency/StdMutex.cpp",
+	  "thrift/concurrency/TimerManager.cpp",
+	  "thrift/concurrency/BoostThreadFactory.cpp",
+	  # "thrift/concurrency/StdMonitor.cpp",
+	  "thrift/concurrency/ThreadManager.cpp",
+	  "thrift/concurrency/Util.cpp",
+	  "thrift/concurrency/Monitor.cpp",
+    ]
+  ),
+  deps = [
+    "//cpp3rdlib/boost/include:boost",
+  ],
+  includes = ["."],
+  visibility = ["//visibility:public"],
+)
+

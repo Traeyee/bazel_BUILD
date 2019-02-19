@@ -1862,6 +1862,7 @@ boost_library(
     ":interprocess",
     ":intrusive",
     ":io",
+    # 依赖了外部库
     #: "iostreams",
     ":iterator",
     ":lexical_cast",
@@ -1898,7 +1899,6 @@ boost_library(
     ":signals2",
     ":smart_ptr",
     ":spirit",
-    ":stacktrace",
     ":statechart",
     ":system",
     ":test",
@@ -1914,7 +1914,6 @@ boost_library(
     ":utility",
     ":uuid",
     ":variant",
-    ":winapi",
     ":xpressive",
   ],
 )
